@@ -15,5 +15,9 @@ public class Main {
         s2.rollno = 2;
         s2.name = "Matteo";
         s2.marks = 9;
+
+        Student students[] = new Student[2];
+        students[0] = s1;
+        students[1] = s2;
     }
 }
