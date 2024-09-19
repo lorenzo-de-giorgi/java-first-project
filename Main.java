@@ -12,6 +12,7 @@ class Human{
 
 public class Main {
     public static void main(String a[]){
-
+        // default
+        Human obj = new Human();
     }
 }
