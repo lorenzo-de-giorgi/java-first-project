@@ -2,6 +2,12 @@
 class Human{
     private int age;
     private String name;
+
+    // default constructor
+    public Human(){
+        age = 12;
+        name = "John";
+    }
 }
 
 public class Main {
