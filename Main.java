@@ -16,6 +16,12 @@ class Human{
     public int getAge(){
         return age;
     }
+
+    // parameterized constructor
+    public Human(int age, String name){
+        this.age = age;
+        this.name = name;
+    }
 }
 
 public class Main {
