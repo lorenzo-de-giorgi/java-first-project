@@ -1,9 +1,8 @@
-
-
 public class Main {
     public static void main(String a[]){
         // Calc obj = new Calc();
-        AdvCalc obj = new AdvCalc();
+        // AdvCalc obj = new AdvCalc();
+        VeryAdvCalc obj = new VeryAdvCalc();
         int r1 = obj.add(4, 5);
         int r2 = obj.sub(7, 3);
         int r3 = obj.multi(5, 3);
