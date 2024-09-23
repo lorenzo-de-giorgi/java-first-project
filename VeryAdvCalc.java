@@ -1,3 +1,2 @@
-public class VeryAdvCalc {
-    
+public class VeryAdvCalc extends AdvCalc{
 }
