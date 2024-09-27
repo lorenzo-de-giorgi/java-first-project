@@ -1,5 +1,9 @@
 import tools.*;
 
+abstract class Car {
+
+}
+
 public class Main {
     public static void main(String a[]){
         // Calc obj = new Calc();
