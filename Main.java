@@ -3,6 +3,10 @@ import tools.*;
 abstract class Car {
     public abstract void drive();
     public abstract void fly();
+
+    public void playMusic(){
+        System.out.println("Play Music...");
+    }
 }
 
 public class Main {
