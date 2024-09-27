@@ -15,6 +15,11 @@ abstract class WagonR extends Car {
     }
 }
 
+class UpdatedWagonR extends WagonR {
+    public void fly(){
+        System.out.println("Flying...");
+    }
+}
 public class Main {
     public static void main(String a[]){
         // Calc obj = new Calc();
