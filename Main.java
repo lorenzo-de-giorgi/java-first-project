@@ -9,6 +9,12 @@ abstract class Car {
     }
 }
 
+abstract class WagonR extends Car {
+    public void drive(){
+        System.out.println("Driving...");
+    }
+}
+
 public class Main {
     public static void main(String a[]){
         // Calc obj = new Calc();
