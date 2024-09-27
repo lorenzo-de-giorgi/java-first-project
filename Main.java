@@ -30,6 +30,12 @@ public class Main {
         int r3 = obj.multi(5, 3);
         int r4 = obj.div(15, 4);
         double r5 = obj.power(4, 2);
+
+        Car obj1 = new UpdatedWagonR();
+        obj1.drive();
+        obj1.fly();
+        obj1.playMusic();
+        
         System.out.println(r1 + " " + r2 + " " + r3 + " " + r4 + " " + r5);
     }
 }
