@@ -1,5 +1,3 @@
-import tools.*;
-
 abstract class Car {
     public abstract void drive();
     public abstract void fly();
