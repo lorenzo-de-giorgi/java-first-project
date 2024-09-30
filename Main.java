@@ -1,23 +1,3 @@
-abstract class Car {
-    public abstract void drive();
-    public abstract void fly();
-
-    public void playMusic(){
-        System.out.println("Play Music...");
-    }
-}
-
-abstract class WagonR extends Car {
-    public void drive(){
-        System.out.println("Driving...");
-    }
-}
-
-class UpdatedWagonR extends WagonR {
-    public void fly(){
-        System.out.println("Flying...");
-    }
-}
 public class Main {
     public static void main(String a[]){
         // Calc obj = new Calc();
@@ -28,11 +8,6 @@ public class Main {
         int r3 = obj.multi(5, 3);
         int r4 = obj.div(15, 4);
         double r5 = obj.power(4, 2);
-
-        Car obj1 = new UpdatedWagonR();
-        obj1.drive();
-        obj1.fly();
-        obj1.playMusic();
         
         System.out.println(r1 + " " + r2 + " " + r3 + " " + r4 + " " + r5);
     }
