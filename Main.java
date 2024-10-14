@@ -1,5 +1,6 @@
 interface A {
-
+    void show();
+    void config();
 }
 
 public class Main {
