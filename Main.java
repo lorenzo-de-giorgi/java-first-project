@@ -16,6 +16,9 @@ class B implements A{
 
 public class Main {
     public static void main(String a[]){
-
+        A obj;
+        obj = new B();
+        obj.show();
+        obj.config();
     }
 }
