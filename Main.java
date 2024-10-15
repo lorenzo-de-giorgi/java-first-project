@@ -1,48 +1,31 @@
-// class - class -> extends
-// class - interface -> implements
-// interface - interface -> extends
-
-interface A {
-    int age = 44;
-    String area = "Mumbai";
-
-    void show();
-    void config();
+interface Computer {
+    void code();
 }
 
-interface X {
-    void run();
-}
-
-interface Y extends X{
-
-}
-
-class B implements A,Y{
-
-    public void show(){
-        System.out.println("in show");
-    }
-
-    public void config(){
-        System.out.println("in config");
-    }
-
-    public void run(){
-        System.out.println("in run");
+class Laptop implements Computer{
+    public void code(){
+        System.out.println("code, compile, run");
     }
 }
 
-public class Main {
-    public static void main(String a[]){
-        A obj;
-        obj = new B();
+class Desktop implements Computer{
+    public void code(){
+        System.out.println("code, compile, faster");
+    }
+}
 
-        obj.show();
-        obj.config();
+class Developer{
+    public void devApp(Computer lap){
+        lap.code();
+    }
+}
 
-        X obj1 = new B();
-        obj1.run();
+public class Main{
+    public static void main(String[] args){
+        Computer lap = new Laptop();
+        Computer desk = new Desktop();
 
+        Developer degio = new Developer();
+        degio.devApp(desk);
     }
 }
