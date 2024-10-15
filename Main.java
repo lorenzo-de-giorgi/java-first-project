@@ -4,13 +4,24 @@ enum Status{
 
 public class Main {
     public static void main(String[] args){
-        // stamapre tutti i satus insieme
-        Status[] ss = Status.values();
-        System.out.println(ss);
+        Status s = Status.Pending;
 
-        for(Status s:ss){
-            System.out.println(s);
-            System.out.println(s+ " : "+s.ordinal());
+        switch (s) {
+            case Running:
+                System.out.println("All Good");
+                break;
+            
+            case Failed:
+                System.out.println("Try Againg");
+                break;
+        
+            case Pending:
+                System.out.println("Please Wait");
+                break;
+
+            default:
+                System.out.println("Done");
+                break;
         }
     }
 }
