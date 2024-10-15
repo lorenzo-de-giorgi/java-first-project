@@ -23,5 +23,15 @@ public class Main {
                 System.out.println("Done");
                 break;
         }
+
+        if(s == Status.Running)
+            System.out.println("All Good");
+        else if(s == Status.Failed)
+            System.out.println("Try Againg");
+        else if(s == Status.Pending)
+            System.out.println("Please Wait");
+        else
+            System.out.println("Done");
+
     }
 }
