@@ -1,37 +1,35 @@
-enum Status{
-    Running, Failed, Pending, Success;
+enum Laptop{
+    // MacBook(2000), XPS(2200), Surface(1500), ThinkPad(1800);
+    MacBook(2000), XPS(2200), Surface, ThinkPad(1800);
+
+    private int price;
+
+    private Laptop(){
+        price = 500;
+    }
+
+    private Laptop(int price){
+        this.price = price;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
 }
 
 public class Main {
     public static void main(String[] args){
-        Status s = Status.Pending;
-
-        switch (s) {
-            case Running:
-                System.out.println("All Good");
-                break;
-            
-            case Failed:
-                System.out.println("Try Againg");
-                break;
         
-            case Pending:
-                System.out.println("Please Wait");
-                break;
+        // Laptop lap = Laptop.MacBook;
+        // System.out.println(lap + " : " + lap.getPrice());
 
-            default:
-                System.out.println("Done");
-                break;
+        for(Laptop lap : Laptop.values()){
+            System.out.println(lap + " : " + lap.getPrice());
         }
-
-        if(s == Status.Running)
-            System.out.println("All Good");
-        else if(s == Status.Failed)
-            System.out.println("Try Againg");
-        else if(s == Status.Pending)
-            System.out.println("Please Wait");
-        else
-            System.out.println("Done");
-
     }
 }
