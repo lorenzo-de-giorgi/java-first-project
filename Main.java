@@ -1,14 +1,16 @@
-// accetta un solo metodo s ene metto due da un errore
-@FunctionalInterface
-interface A{
-    int add(int i, int j);
-}
-
 public class Main {
     public static void main(String a[]){
-        A obj = (i, j) -> i+j;
+        int i = 0;
+        int j = 0;
 
-        int result = obj.add(5, 4);
-        System.out.println(result);
+        try {
+            j = 18/i;
+        } catch (Exception e) {
+            System.out.println("Something went wrong");
+        }
+
+        System.out.println(j);
+
+        System.out.println("Bye");
     }
 }
