@@ -5,35 +5,27 @@ class DegioException extends Exception
 		super(string);
 	}
 }
+
+class A{
+	public void show() throws ClassNotFoundException
+	{
+		Class.forName("Calc");
+	}
+}
+
 public class Main {
+	static {
+		System.out.println("Class Loader");
+	}
     public static void main(String[] args) {
 
-    	int i=20;
-    	int j=0;
- 
-    	
-    	try
-    	{
-    		j=18/i;
-    		if(j==0)
-				//throw new Exception("I don't want to do print zero");
-    			throw new DegioException("I don't want to do print zero");
-    	}
+		A obj = new A();
 
-    	catch(ArithmeticException e)
-    	{
-    		j=18/i;
-    		System.out.println("that is default output"+e);
+		try {
+			obj.show();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 
-			//System.out.println("Cannot divide by zero");
-    	}
-    	
-    	catch(Exception e)
-    	{
-  
-    		System.out.println("Something went wrong."+e);
-    	}
-    	System.out.println(j);
-    	System.out.println("Bye");
     }
 }
