@@ -1,34 +1,36 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+class A extends Thread
+{
+	public void run()
+	{
+		for(int i=1;i<=100;i++)
+		{
+			System.out.println("Hi");
+		}
+	}
+}
+
+class B extends Thread
+{
+	public void run()
+	{
+		for(int i=1;i<=100;i++)
+		{
+			System.out.println("Hello");
+		}
+	}
+}
 
 public class Main {
-    public static void main(String[] args) throws NumberFormatException {
-
-		int i = 0;
-		int j = 0;
-
-		try {
-			j = 18/i;
-		} catch(Exception e) {
-    		System.out.println("Someting went wrong.");
-    		System.out.println("Bye");
-    	} finally {
-    		System.out.println("Bye");
-    	}
-
-		int num=0;
-    	BufferedReader br=null;
-    	try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in)))
-    	{
-			//InputStreamReader in =new InputStreamReader(System.in);
-			//BufferedReader br=new BufferedReader(in);
-    		num=Integer.parseInt(br.readLine());
-    		System.out.println(num);
-    	}
-    	finally
-    	{
-    		br.close();
-    	}
+    public static void main(String[] args) throws NumberFormatException {   
+    	
+    	A obj1=new A();
+    	B obj2=new B();
+    	
+//    	obj1.show();
+//    	obj2.show();
+    	
+    	obj1.start();
+    	obj2.start();
     }
+    
 }
