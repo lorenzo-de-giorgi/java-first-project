@@ -1,80 +1,33 @@
-class Z
+class Counter
 {
-	
-}
-
-class A implements Runnable
-{
-	public void run()
+	int count;
+//	public void increment()
+	public synchronized void increment()
 	{
-		for(int i=1;i<=5;i++)
-		{
-			System.out.println("Hi");
-			try {
-				Thread.sleep(10);
-			}catch(InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-	}
-}
-
-class B implements Runnable
-{
-	public void run()
-	{
-		for(int i=1;i<=5;i++)
-		{
-			System.out.println("Hello");
-			try {
-				Thread.sleep(10);
-			}catch(InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
+		count++;
 	}
 }
 
 public class Main {
-    public static void main(String[] args) throws NumberFormatException {   
+    public static void main(String[] args) throws InterruptedException{   
     	
-//    	A obj1=new A();
-//    	B obj2=new B();
-//    	Runnable obj1=new A();
-//    	Runnable obj2=new B();
-    	
-    	
-//    	Runnable obj1=new Runnable()
-//    	{
-//    		public void run()
-//    		{
-//    			for(int i=1;i<=5;i++)
-//    			{
-//    				System.out.println("Hello");
-//    				try {
-//    					Thread.sleep(10);
-//    				}catch(InterruptedException e) {
-//    					e.printStackTrace();
-//    				}
-//    			}
-//    		}
-//   		};
+    	Counter c=new Counter();
     	
     	Runnable obj1=()->
     	{
-    		for(int i=1;i<=5;i++)
+//    		for(int i=1;i<=1000;i++)
+    		for(int i=1;i<=10000;i++)
     		{
-    			System.out.println("Hi");
-    			try {Thread.sleep(10);}catch(InterruptedException e) {e.printStackTrace();}
+    			c.increment();
     		}
     	};
     	
     	Runnable obj2=()->
     	{
-    		for(int i=1;i<=5;i++)
+//    		for(int i=1;i<=1000;i++)
+    		for(int i=1;i<=10000;i++)
     		{
-    			System.out.println("Hello");
-    			try {Thread.sleep(10);}catch(InterruptedException e) {e.printStackTrace();}
+    			c.increment();
     		}
     	};
     	
@@ -83,6 +36,10 @@ public class Main {
     	 	
     	t1.start();
     	t2.start();
+    	
+    	t1.join();
+    	t2.join();
+    	
+    	System.out.println(c.count);
     }
-    
 }
