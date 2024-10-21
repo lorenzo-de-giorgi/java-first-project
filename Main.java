@@ -1,8 +1,13 @@
-class A extends Thread
+class Z
+{
+	
+}
+
+class A implements Runnable
 {
 	public void run()
 	{
-		for(int i=1;i<=100;i++)
+		for(int i=1;i<=5;i++)
 		{
 			System.out.println("Hi");
 			try {
@@ -14,11 +19,11 @@ class A extends Thread
 	}
 }
 
-class B extends Thread
+class B implements Runnable
 {
 	public void run()
 	{
-		for(int i=1;i<=100;i++)
+		for(int i=1;i<=5;i++)
 		{
 			System.out.println("Hello");
 			try {
@@ -33,22 +38,51 @@ class B extends Thread
 public class Main {
     public static void main(String[] args) throws NumberFormatException {   
     	
-    	A obj1=new A();
-    	B obj2=new B();
+//    	A obj1=new A();
+//    	B obj2=new B();
+//    	Runnable obj1=new A();
+//    	Runnable obj2=new B();
     	
-//    	obj1.show();
-//    	obj2.show();
     	
-    	obj2.setPriority(Thread.MAX_PRIORITY);
-    	System.out.println(obj1.getPriority());
+//    	Runnable obj1=new Runnable()
+//    	{
+//    		public void run()
+//    		{
+//    			for(int i=1;i<=5;i++)
+//    			{
+//    				System.out.println("Hello");
+//    				try {
+//    					Thread.sleep(10);
+//    				}catch(InterruptedException e) {
+//    					e.printStackTrace();
+//    				}
+//    			}
+//    		}
+//   		};
     	
-    	obj1.start();
-    	try {
-			Thread.sleep(2);
-		}catch(InterruptedException e) {
-			e.printStackTrace();
-		}
-    	obj2.start();
+    	Runnable obj1=()->
+    	{
+    		for(int i=1;i<=5;i++)
+    		{
+    			System.out.println("Hi");
+    			try {Thread.sleep(10);}catch(InterruptedException e) {e.printStackTrace();}
+    		}
+    	};
+    	
+    	Runnable obj2=()->
+    	{
+    		for(int i=1;i<=5;i++)
+    		{
+    			System.out.println("Hello");
+    			try {Thread.sleep(10);}catch(InterruptedException e) {e.printStackTrace();}
+    		}
+    	};
+    	
+    	Thread t1=new Thread(obj1);
+    	Thread t2=new Thread(obj2);
+    	 	
+    	t1.start();
+    	t2.start();
     }
     
 }
