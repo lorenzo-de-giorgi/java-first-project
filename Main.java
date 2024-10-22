@@ -1,55 +1,25 @@
-import java.util.Set;
-import java.util.HashSet;
-import java.util.TreeSet;
-import java.util.Collection;
-import java.util.Iterator;
-
-/*
-import java.util.List;
-import java.util.ArrayList;
-
-public class Demo {
-    public static void main(String[] args){   
-    	
-    	List<Integer> nums=new ArrayList<Integer>();
-    	nums.add(6);
-    	nums.add(5);
-    	nums.add(8);
-    	nums.add(2);
-    	nums.add(6);
-    	//nums.add("5");
-    	
-    	for(Object n:nums)
-    	{
-    		int num=(Integer)n;
-    		System.out.println(num+2);
-    	}
-    }
-}
-*/
-
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Hashtable;
 
 public class Main {
     public static void main(String[] args){   
     	
-//    	Set<Integer> nums=new HashSet<Integer>();  	
-//    	Set<Integer> nums=new TreeSet<Integer>();
-    	Collection<Integer> nums=new TreeSet<Integer>();
-    	nums.add(62);
-    	nums.add(54);
-    	nums.add(82);
-    	nums.add(21);
+//    	Map<String, Integer> students=new HashMap<>();
+    	Map<String, Integer> students=new Hashtable<>();
     	
-    	//nums.add("5");
+    	students.put("Navin",56);
+    	students.put("Harsh",23);
+    	students.put("Sushil",67);
+    	students.put("Kiran",92);
+    	students.put("Harsh",45);
     	
-    	Iterator<Integer> values = nums.iterator();
+    	System.out.println(students.keySet());
     	
-    	while(values.hasNext())
-    		System.out.println(values.next());
+    	for(String key : students.keySet())
+    	{
+    		System.out.println(key + ":" + students.get(key));
+    	}
     	
-//    	for(int n:nums)
-//    	{
-//    		System.out.println(n);
-//   	}
     }
 }
